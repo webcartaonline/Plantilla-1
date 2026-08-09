@@ -11,12 +11,23 @@ const RUTA_JSON = 'carta.json';
 const CLAVE_IDIOMA = 'barCerveceria.idioma';
 
 /* ---------- Estadísticas de uso (opcional) ----------
-   Cambia esta URL por la de tu Worker cuando lo despliegues.
+   >>> ÚNICO CAMBIO NECESARIO PARA ACTIVARLAS <<<
+   Pega aquí la dirección de tu Worker, terminada en /evento.
    Si se deja vacía, la carta funciona igual pero no envía nada. */
-const ENDPOINT_EVENTOS = 'https://estadisticas-bar-cerbeceria.webcartaonline.workers.dev/evento'; // p.ej. 'https://estadisticas-bar-cerveceria.TU-USUARIO.workers.dev/evento'
+const ENDPOINT_EVENTOS = 'https://estadisticas-bar-cerbeceria.webcartaonline.workers.dev/evento'; // p.ej. 'https://estadisticas-bar.TU-SUBDOMINIO.workers.dev/evento'
+
+/* Cada evento se manda UNA sola vez por visita. Si alguien abre y cierra
+   la misma sección diez veces, cuenta como una. Así el dato es más honesto
+   (mide interés, no nerviosismo) y no se agota la cuota de Cloudflare. */
+const eventosEnviados = new Set();
 
 function registrarEvento(tipo, valor) {
   if (!ENDPOINT_EVENTOS) return;
+
+  const firma = `${tipo}:${valor}`;
+  if (eventosEnviados.has(firma)) return;
+  eventosEnviados.add(firma);
+
   try {
     const cuerpo = JSON.stringify({ tipo, valor });
     if (navigator.sendBeacon) {
