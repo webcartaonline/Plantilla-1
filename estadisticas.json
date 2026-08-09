@@ -1,24 +1,29 @@
 {
-  "actualizado": "2026-08-09T22:33:50.844Z",
+  "actualizado": "2026-08-09T23:01:03.869Z",
   "vistas": {
-    "2026-08-09": 1
+    "2026-08-09": 3
   },
   "idiomas": {
-    "es": 1
+    "es": 3
   },
   "secciones": {
-    "s-bebidas": 1,
+    "s-bebidas": 3,
     "s-comidas": 1,
     "s-dulces": 1,
-    "s-entrantes": 1
+    "s-entrantes": 1,
+    "s-postres": 1
   },
   "grupos": {
     "g-bolleria": 1,
     "g-cafes": 1,
+    "g-caseros": 1,
+    "g-cervezas-barril": 1,
+    "g-grupo-b5ag": 1,
     "g-infantil": 1,
     "g-picar": 1,
     "g-raciones": 1,
-    "g-sin-alcohol": 1
+    "g-sin-alcohol": 1,
+    "g-vinos": 1
   },
   "alergenos": {
     "mostaza": 1,
