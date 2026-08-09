@@ -13,7 +13,7 @@ const CLAVE_IDIOMA = 'barCerveceria.idioma';
 /* ---------- Estadísticas de uso (opcional) ----------
    Cambia esta URL por la de tu Worker cuando lo despliegues.
    Si se deja vacía, la carta funciona igual pero no envía nada. */
-const ENDPOINT_EVENTOS = ''; // p.ej. 'https://estadisticas-bar-cerveceria.TU-USUARIO.workers.dev/evento'
+const ENDPOINT_EVENTOS = 'https://estadisticas-bar-cerbeceria.webcartaonline.workers.dev/evento'; // p.ej. 'https://estadisticas-bar-cerveceria.TU-USUARIO.workers.dev/evento'
 
 function registrarEvento(tipo, valor) {
   if (!ENDPOINT_EVENTOS) return;
