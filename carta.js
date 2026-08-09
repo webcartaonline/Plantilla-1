@@ -31,9 +31,15 @@ function registrarEvento(tipo, valor) {
   try {
     const cuerpo = JSON.stringify({ tipo, valor });
     if (navigator.sendBeacon) {
-      navigator.sendBeacon(ENDPOINT_EVENTOS, new Blob([cuerpo], { type: 'application/json' }));
+      // OJO: se manda como 'text/plain' (no 'application/json') a propósito.
+      // Con 'application/json' el navegador exige una comprobación previa
+      // (preflight) entre dominios distintos, y sendBeacon no puede hacerla:
+      // el envío se descarta en silencio y nunca llega al Worker.
+      // 'text/plain' evita esa comprobación y el contenido sigue siendo
+      // JSON válido; el Worker solo tiene que leerlo como texto y parsearlo.
+      navigator.sendBeacon(ENDPOINT_EVENTOS, new Blob([cuerpo], { type: 'text/plain' }));
     } else {
-      fetch(ENDPOINT_EVENTOS, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: cuerpo, keepalive: true })
+      fetch(ENDPOINT_EVENTOS, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: cuerpo, keepalive: true })
         .catch(() => {});
     }
   } catch {
