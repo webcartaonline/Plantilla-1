@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Cervecería</title>
+  <meta name="description" content="Carta online. Cerveza fría y buena mesa.">
+  <meta name="theme-color" content="#FBF7EC">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera__marca">
+      <p class="cabecera__lema" data-t="lema"></p>
+      <h1 class="cabecera__nombre" data-t="nombre">Bar Cervecería</h1>
+    </div>
+    <div class="idioma" role="group" aria-label="Idioma / Language">
+      <button class="idioma__btn" data-idioma="es" type="button">ES</button>
+      <button class="idioma__btn" data-idioma="en" type="button">EN</button>
+    </div>
+  </header>
+
+  <main class="carta" id="carta">
+    <p class="estado" id="estado" data-t="cargando">Cargando la carta…</p>
+  </main>
+
+  <section class="alergenos" aria-labelledby="tituloAlergenos">
+    <h2 class="alergenos__titulo" id="tituloAlergenos" data-t="alergenosTitulo">Alérgenos</h2>
+    <p class="alergenos__ayuda" data-t="alergenosAyuda"></p>
+    <ul class="alergenos__lista" id="leyenda"></ul>
+    <button class="alergenos__limpiar" id="limpiarFiltros" type="button" hidden data-t="limpiar"></button>
+  </section>
+
+  <footer class="pie">
+    <p class="pie__fecha"><span data-t="actualizadoPre"></span> <span data-campo="actualizado">—</span></p>
+    <p class="pie__nota" data-t="ivaNota"></p>
+  </footer>
+
+  <script src="carta.js"></script>
+</body>
+</html>

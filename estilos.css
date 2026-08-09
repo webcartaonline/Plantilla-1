@@ -1,0 +1,420 @@
+/* =========================================================
+   Bar Cervecería — carta online
+   Marfil con acentos naranja y verde. Diseño sencillo.
+   Jerarquía plegable: sección > grupo > ítem.
+   ========================================================= */
+
+:root {
+  --marfil:      #FBF7EC;
+  --marfil-alto: #FFFDF6;
+  --naranja:     #E8641A;
+  --naranja-hondo:#BF4E0E;
+  --verde:       #2F7D4F;
+  --verde-hondo: #205C39;
+  --tinta:       #23201A;
+  --tinta-suave: #6B655A;
+  --linea:       rgba(35, 32, 26, 0.12);
+  --aviso:       #B3402E;
+
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --texto:   "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+  --u: 8px;
+  --ancho: 680px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--marfil);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Cabecera ---------- */
+
+.cabecera {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--u);
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: calc(var(--u) * 5) calc(var(--u) * 2.5) calc(var(--u) * 3);
+}
+
+.cabecera__lema {
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verde);
+}
+
+.cabecera__nombre {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 8vw, 3.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+/* Selector de idioma */
+.idioma {
+  display: inline-flex;
+  flex-shrink: 0;
+  border: 1.5px solid var(--tinta);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.idioma__btn {
+  padding: 6px 13px;
+  border: none;
+  background: transparent;
+  font-family: var(--texto);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--tinta);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.idioma__btn[aria-pressed="true"] {
+  background: var(--tinta);
+  color: var(--marfil-alto);
+}
+
+/* ---------- Cuerpo ---------- */
+
+.carta {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 calc(var(--u) * 2.5) calc(var(--u) * 4);
+}
+
+.estado {
+  padding: calc(var(--u) * 6) 0;
+  text-align: center;
+  color: var(--tinta-suave);
+}
+
+.estado--error { color: var(--aviso); font-weight: 500; }
+
+/* ---------- Nivel 1: Sección ---------- */
+
+.seccion {
+  border-top: 2px solid var(--tinta);
+}
+
+.seccion:last-of-type { border-bottom: 2px solid var(--tinta); }
+
+.seccion__cabecera {
+  display: flex;
+  align-items: center;
+  gap: var(--u);
+  width: 100%;
+  padding: calc(var(--u) * 2.5) 4px;
+  border: none;
+  background: transparent;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  color: var(--tinta);
+  text-align: left;
+  cursor: pointer;
+}
+
+.seccion__cabecera:hover { color: var(--naranja-hondo); }
+
+.seccion__signo {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+
+/* El signo +/− dibujado con dos barras */
+.seccion__signo::before,
+.seccion__signo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 3px;
+  background: var(--naranja);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.seccion__signo::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+.seccion__cabecera[aria-expanded="true"] .seccion__signo::after {
+  transform: translate(-50%, -50%) rotate(0);
+  opacity: 0;
+}
+
+.seccion__cuerpo {
+  padding-bottom: calc(var(--u) * 2);
+}
+
+.seccion__cuerpo[hidden] { display: none; }
+
+/* ---------- Nivel 2: Grupo ---------- */
+
+.grupo {
+  border-top: 1px solid var(--linea);
+  margin: 0 4px;
+}
+
+.grupo:first-child { border-top: none; }
+
+.grupo__cabecera {
+  display: flex;
+  align-items: center;
+  gap: var(--u);
+  width: 100%;
+  padding: calc(var(--u) * 1.75) 0;
+  border: none;
+  background: transparent;
+  font-family: var(--texto);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--verde-hondo);
+  text-align: left;
+  cursor: pointer;
+}
+
+.grupo__cabecera::before {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--verde);
+  border-bottom: 2px solid var(--verde);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.grupo__cabecera[aria-expanded="true"]::before {
+  transform: rotate(-135deg);
+}
+
+.grupo__conteo {
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--tinta-suave);
+}
+
+.grupo__cuerpo { padding: 0 0 calc(var(--u) * 1.5) calc(var(--u) * 2.25); }
+.grupo__cuerpo[hidden] { display: none; }
+
+/* ---------- Nivel 3: Ítem ---------- */
+
+.item {
+  padding: calc(var(--u) * 1.5) 0;
+  border-top: 1px dashed var(--linea);
+}
+
+.item:first-child { border-top: none; }
+
+.item__linea {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.item__nombre {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.item__guia {
+  flex: 1;
+  min-width: 10px;
+  border-bottom: 1.5px dotted var(--linea);
+  transform: translateY(-4px);
+}
+
+.item__precio {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--naranja-hondo);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.item__descripcion {
+  margin: 3px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+  max-width: 54ch;
+}
+
+/* ---------- Alérgenos en el ítem ---------- */
+
+.item__alergenos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: calc(var(--u) * 1.25) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ficha {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--linea);
+  border-radius: 50%;
+  background: var(--marfil-alto);
+  color: var(--verde-hondo);
+  cursor: help;
+}
+
+.ficha svg { width: 15px; height: 15px; display: block; }
+
+.ficha--evitar {
+  background: var(--aviso);
+  border-color: var(--aviso);
+  color: var(--marfil-alto);
+}
+
+.item--evitar { background: rgba(179, 64, 46, 0.05); border-radius: 4px; }
+
+.item__aviso {
+  display: block;
+  margin: calc(var(--u) * 1.25) 0 0;
+  padding: 5px 10px;
+  border-left: 3px solid var(--aviso);
+  background: rgba(179, 64, 46, 0.08);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--aviso);
+}
+
+.item__sin-alergenos {
+  display: inline-block;
+  margin-top: calc(var(--u) * 1.25);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--verde);
+}
+
+/* ---------- Panel de alérgenos ---------- */
+
+.alergenos {
+  max-width: var(--ancho);
+  margin: calc(var(--u) * 4) auto 0;
+  padding: calc(var(--u) * 4) calc(var(--u) * 2.5);
+  border-top: 1px solid var(--linea);
+}
+
+.alergenos__titulo {
+  margin: 0 0 6px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.alergenos__ayuda {
+  margin: 0 0 calc(var(--u) * 2.5);
+  font-size: 0.84rem;
+  color: var(--tinta-suave);
+  max-width: 50ch;
+}
+
+.alergenos__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alergenos__boton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--linea);
+  border-radius: 6px;
+  background: var(--marfil-alto);
+  color: var(--tinta);
+  font-family: inherit;
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.alergenos__boton:hover { border-color: var(--verde); }
+.alergenos__boton svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--verde-hondo); }
+
+.alergenos__boton[aria-pressed="true"] {
+  background: var(--aviso);
+  border-color: var(--aviso);
+  color: var(--marfil-alto);
+}
+.alergenos__boton[aria-pressed="true"] svg { color: var(--marfil-alto); }
+
+.alergenos__limpiar {
+  margin-top: calc(var(--u) * 2);
+  padding: 8px 16px;
+  border: 1.5px solid var(--naranja);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--naranja-hondo);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.alergenos__limpiar:hover { background: var(--naranja); color: var(--marfil-alto); }
+
+/* ---------- Pie ---------- */
+
+.pie {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: calc(var(--u) * 3) calc(var(--u) * 2.5) calc(var(--u) * 6);
+  font-size: 0.78rem;
+  color: var(--tinta-suave);
+}
+
+.pie p { margin: 0 0 4px; }
+
+/* ---------- Accesibilidad ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--naranja);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

@@ -1,0 +1,370 @@
+{
+  "negocio": {
+    "nombre": "Bar Cervecería",
+    "idiomas": ["es", "en"],
+    "lema": { "es": "Cerveza fría y buena mesa", "en": "Cold beer and good food" },
+    "actualizado": "2026-08-09T10:00:00Z"
+  },
+  "secciones": [
+    {
+      "id": "s-entrantes",
+      "nombre": { "es": "ENTRANTES", "en": "STARTERS" },
+      "grupos": [
+        {
+          "id": "g-picar",
+          "nombre": { "es": "Para picar", "en": "To share" },
+          "items": [
+            {
+              "id": "i-bravas",
+              "nombre": { "es": "Patatas bravas", "en": "Spicy potatoes" },
+              "descripcion": {
+                "es": "Con salsa brava de la casa y alioli suave",
+                "en": "With house brava sauce and mild aioli"
+              },
+              "precio": 6.5,
+              "alergenos": ["huevos", "lacteos"]
+            },
+            {
+              "id": "i-nachos",
+              "nombre": { "es": "Nachos con guacamole", "en": "Nachos with guacamole" },
+              "descripcion": {
+                "es": "Nachos de maíz, guacamole, pico de gallo y queso fundido",
+                "en": "Corn nachos, guacamole, pico de gallo and melted cheese"
+              },
+              "precio": 8.9,
+              "alergenos": ["lacteos"]
+            },
+            {
+              "id": "i-alitas",
+              "nombre": { "es": "Alitas de pollo", "en": "Chicken wings" },
+              "descripcion": {
+                "es": "Marinadas en cerveza, ocho unidades con salsa barbacoa",
+                "en": "Beer-marinated, eight pieces with barbecue sauce"
+              },
+              "precio": 9.5,
+              "alergenos": ["gluten", "mostaza"]
+            }
+          ]
+        },
+        {
+          "id": "g-croquetas",
+          "nombre": { "es": "Croquetas", "en": "Croquettes" },
+          "items": [
+            {
+              "id": "i-croq-jamon",
+              "nombre": { "es": "De jamón", "en": "Iberian ham" },
+              "descripcion": {
+                "es": "Seis unidades, bechamel cremosa",
+                "en": "Six pieces, creamy béchamel"
+              },
+              "precio": 7.5,
+              "alergenos": ["gluten", "lacteos", "huevos"]
+            },
+            {
+              "id": "i-croq-boletus",
+              "nombre": { "es": "De boletus", "en": "Wild mushroom" },
+              "descripcion": {
+                "es": "Seis unidades, con un toque de trufa",
+                "en": "Six pieces, with a hint of truffle"
+              },
+              "precio": 7.9,
+              "alergenos": ["gluten", "lacteos", "huevos"]
+            }
+          ]
+        },
+        {
+          "id": "g-ensaladas",
+          "nombre": { "es": "Ensaladas", "en": "Salads" },
+          "items": [
+            {
+              "id": "i-cesar",
+              "nombre": { "es": "César", "en": "Caesar" },
+              "descripcion": {
+                "es": "Pollo, parmesano, picatostes y salsa césar",
+                "en": "Chicken, parmesan, croutons and Caesar dressing"
+              },
+              "precio": 9.9,
+              "alergenos": ["gluten", "lacteos", "huevos", "pescado"]
+            },
+            {
+              "id": "i-ensalada-casa",
+              "nombre": { "es": "De la casa", "en": "House salad" },
+              "descripcion": {
+                "es": "Mézclum, tomate, atún, huevo, cebolla y aceitunas",
+                "en": "Mixed greens, tomato, tuna, egg, onion and olives"
+              },
+              "precio": 8.5,
+              "alergenos": ["pescado", "huevos"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s-comidas",
+      "nombre": { "es": "COMIDAS", "en": "MAINS" },
+      "grupos": [
+        {
+          "id": "g-hamburguesas",
+          "nombre": { "es": "Hamburguesas", "en": "Burgers" },
+          "items": [
+            {
+              "id": "i-burger-clasica",
+              "nombre": { "es": "Clásica", "en": "Classic" },
+              "descripcion": {
+                "es": "Vacuno, lechuga, tomate, cebolla y queso cheddar",
+                "en": "Beef, lettuce, tomato, onion and cheddar cheese"
+              },
+              "precio": 11.5,
+              "alergenos": ["gluten", "lacteos", "sesamo"]
+            },
+            {
+              "id": "i-burger-cervecera",
+              "nombre": { "es": "Cervecera", "en": "House special" },
+              "descripcion": {
+                "es": "Vacuno, cebolla caramelizada a la cerveza, bacon y salsa de la casa",
+                "en": "Beef, beer-caramelised onion, bacon and house sauce"
+              },
+              "precio": 13.5,
+              "alergenos": ["gluten", "lacteos", "huevos", "mostaza", "sesamo"]
+            },
+            {
+              "id": "i-burger-vegetal",
+              "nombre": { "es": "Vegetal", "en": "Veggie" },
+              "descripcion": {
+                "es": "Hamburguesa de garbanzo y remolacha, apta para veganos",
+                "en": "Chickpea and beetroot patty, suitable for vegans"
+              },
+              "precio": 11.9,
+              "alergenos": ["gluten", "sesamo"]
+            }
+          ]
+        },
+        {
+          "id": "g-raciones",
+          "nombre": { "es": "Raciones", "en": "Platters" },
+          "items": [
+            {
+              "id": "i-calamares",
+              "nombre": { "es": "Calamares a la andaluza", "en": "Fried calamari" },
+              "descripcion": {
+                "es": "Rebozados y fritos, con limón y alioli",
+                "en": "Battered and fried, with lemon and aioli"
+              },
+              "precio": 12.0,
+              "alergenos": ["gluten", "moluscos", "huevos"]
+            },
+            {
+              "id": "i-pulpo",
+              "nombre": { "es": "Pulpo a la brasa", "en": "Grilled octopus" },
+              "descripcion": {
+                "es": "Sobre parmentier de patata y pimentón",
+                "en": "On potato parmentier with paprika"
+              },
+              "precio": 16.5,
+              "alergenos": ["moluscos"]
+            }
+          ]
+        },
+        {
+          "id": "g-infantil",
+          "nombre": { "es": "Infantil", "en": "Kids" },
+          "items": [
+            {
+              "id": "i-nuggets",
+              "nombre": { "es": "Nuggets con patatas", "en": "Nuggets with fries" },
+              "descripcion": {
+                "es": "Seis nuggets de pollo con patatas fritas",
+                "en": "Six chicken nuggets with fries"
+              },
+              "precio": 7.0,
+              "alergenos": ["gluten"]
+            },
+            {
+              "id": "i-mini-burger",
+              "nombre": { "es": "Mini burger", "en": "Mini burger" },
+              "descripcion": {
+                "es": "Hamburguesa pequeña con queso y patatas",
+                "en": "Small cheeseburger with fries"
+              },
+              "precio": 7.5,
+              "alergenos": ["gluten", "lacteos", "sesamo"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s-bebidas",
+      "nombre": { "es": "BEBIDAS", "en": "DRINKS" },
+      "grupos": [
+        {
+          "id": "g-cervezas-barril",
+          "nombre": { "es": "Cervezas de barril", "en": "Draft beers" },
+          "items": [
+            {
+              "id": "i-rubia",
+              "nombre": { "es": "Rubia (caña)", "en": "Lager (small)" },
+              "descripcion": { "es": "Caña 25 cl", "en": "Small glass, 25 cl" },
+              "precio": 2.2,
+              "alergenos": ["gluten"]
+            },
+            {
+              "id": "i-tostada",
+              "nombre": { "es": "Tostada", "en": "Amber ale" },
+              "descripcion": { "es": "Tercio 33 cl", "en": "Bottle, 33 cl" },
+              "precio": 2.8,
+              "alergenos": ["gluten"]
+            },
+            {
+              "id": "i-ipa",
+              "nombre": { "es": "IPA de la casa", "en": "House IPA" },
+              "descripcion": { "es": "Copa 40 cl, lúpulo intenso", "en": "Pint 40 cl, hop-forward" },
+              "precio": 3.9,
+              "alergenos": ["gluten"]
+            }
+          ]
+        },
+        {
+          "id": "g-sin-alcohol",
+          "nombre": { "es": "Sin alcohol", "en": "Soft drinks" },
+          "items": [
+            {
+              "id": "i-refresco",
+              "nombre": { "es": "Refrescos", "en": "Soft drinks" },
+              "descripcion": { "es": "Cola, naranja, limón o tónica", "en": "Cola, orange, lemon or tonic" },
+              "precio": 2.5,
+              "alergenos": []
+            },
+            {
+              "id": "i-agua",
+              "nombre": { "es": "Agua mineral", "en": "Mineral water" },
+              "descripcion": { "es": "50 cl, natural o con gas", "en": "50 cl, still or sparkling" },
+              "precio": 1.8,
+              "alergenos": []
+            }
+          ]
+        },
+        {
+          "id": "g-vinos",
+          "nombre": { "es": "Vinos", "en": "Wines" },
+          "items": [
+            {
+              "id": "i-tinto",
+              "nombre": { "es": "Tinto de la casa", "en": "House red" },
+              "descripcion": { "es": "Copa, D.O. a elegir", "en": "Glass, choice of D.O." },
+              "precio": 2.8,
+              "alergenos": ["sulfitos"]
+            },
+            {
+              "id": "i-blanco",
+              "nombre": { "es": "Blanco de la casa", "en": "House white" },
+              "descripcion": { "es": "Copa, bien frío", "en": "Glass, well chilled" },
+              "precio": 2.8,
+              "alergenos": ["sulfitos"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s-postres",
+      "nombre": { "es": "POSTRES", "en": "DESSERTS" },
+      "grupos": [
+        {
+          "id": "g-caseros",
+          "nombre": { "es": "Caseros", "en": "Homemade" },
+          "items": [
+            {
+              "id": "i-tarta-queso",
+              "nombre": { "es": "Tarta de queso", "en": "Cheesecake" },
+              "descripcion": { "es": "Al horno, cremosa por dentro", "en": "Baked, creamy inside" },
+              "precio": 5.5,
+              "alergenos": ["lacteos", "huevos", "gluten"]
+            },
+            {
+              "id": "i-coulant",
+              "nombre": { "es": "Coulant de chocolate", "en": "Chocolate coulant" },
+              "descripcion": { "es": "Con corazón fundido y helado de vainilla", "en": "Molten centre with vanilla ice cream" },
+              "precio": 6.0,
+              "alergenos": ["lacteos", "huevos", "gluten", "soja"]
+            }
+          ]
+        },
+        {
+          "id": "g-helados",
+          "nombre": { "es": "Helados", "en": "Ice cream" },
+          "items": [
+            {
+              "id": "i-helado-vainilla",
+              "nombre": { "es": "Vainilla", "en": "Vanilla" },
+              "descripcion": { "es": "Dos bolas", "en": "Two scoops" },
+              "precio": 3.5,
+              "alergenos": ["lacteos", "huevos"]
+            },
+            {
+              "id": "i-sorbete-limon",
+              "nombre": { "es": "Sorbete de limón", "en": "Lemon sorbet" },
+              "descripcion": { "es": "Sin lácteos, apto para veganos", "en": "Dairy-free, suitable for vegans" },
+              "precio": 3.2,
+              "alergenos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s-dulces",
+      "nombre": { "es": "DULCES", "en": "SWEETS" },
+      "grupos": [
+        {
+          "id": "g-bolleria",
+          "nombre": { "es": "Bollería", "en": "Pastries" },
+          "items": [
+            {
+              "id": "i-churros",
+              "nombre": { "es": "Churros con chocolate", "en": "Churros with chocolate" },
+              "descripcion": { "es": "Ración con chocolate caliente para mojar", "en": "Portion with hot chocolate for dipping" },
+              "precio": 4.5,
+              "alergenos": ["gluten", "lacteos"]
+            },
+            {
+              "id": "i-torrijas",
+              "nombre": { "es": "Torrijas", "en": "Spanish French toast" },
+              "descripcion": { "es": "Caseras, con canela y azúcar", "en": "Homemade, with cinnamon and sugar" },
+              "precio": 4.0,
+              "alergenos": ["gluten", "lacteos", "huevos"]
+            }
+          ]
+        },
+        {
+          "id": "g-cafes",
+          "nombre": { "es": "Cafés", "en": "Coffees" },
+          "items": [
+            {
+              "id": "i-cafe-solo",
+              "nombre": { "es": "Café solo", "en": "Espresso" },
+              "descripcion": { "es": "Espresso de tueste natural", "en": "Natural-roast espresso" },
+              "precio": 1.4,
+              "alergenos": []
+            },
+            {
+              "id": "i-cortado",
+              "nombre": { "es": "Cortado", "en": "Macchiato" },
+              "descripcion": { "es": "Con un toque de leche", "en": "With a splash of milk" },
+              "precio": 1.6,
+              "alergenos": ["lacteos"]
+            },
+            {
+              "id": "i-irish",
+              "nombre": { "es": "Café irlandés", "en": "Irish coffee" },
+              "descripcion": { "es": "Con whisky y nata montada", "en": "With whiskey and whipped cream" },
+              "precio": 4.5,
+              "alergenos": ["lacteos", "gluten"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
