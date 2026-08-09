@@ -1,8 +1,27 @@
 {
-  "actualizado": "2026-08-09T22:01:04.657Z",
-  "vistas": {},
-  "idiomas": {},
-  "secciones": {},
-  "grupos": {},
-  "alergenos": {}
+  "actualizado": "2026-08-09T22:33:50.844Z",
+  "vistas": {
+    "2026-08-09": 1
+  },
+  "idiomas": {
+    "es": 1
+  },
+  "secciones": {
+    "s-bebidas": 1,
+    "s-comidas": 1,
+    "s-dulces": 1,
+    "s-entrantes": 1
+  },
+  "grupos": {
+    "g-bolleria": 1,
+    "g-cafes": 1,
+    "g-infantil": 1,
+    "g-picar": 1,
+    "g-raciones": 1,
+    "g-sin-alcohol": 1
+  },
+  "alergenos": {
+    "mostaza": 1,
+    "sesamo": 1
+  }
 }
