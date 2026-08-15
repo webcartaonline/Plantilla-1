@@ -1,19 +1,20 @@
 {
-  "actualizado": "2026-08-15T13:00:32.523Z",
+  "actualizado": "2026-08-15T14:00:32.351Z",
   "vistas": {
     "2026-08-09": 4,
     "2026-08-10": 3,
-    "2026-08-12": 2
+    "2026-08-12": 2,
+    "2026-08-15": 4
   },
   "idiomas": {
     "en": 1,
-    "es": 9
+    "es": 13
   },
   "secciones": {
     "s-bebidas": 4,
     "s-comidas": 1,
     "s-dulces": 2,
-    "s-entrantes": 3,
+    "s-entrantes": 4,
     "s-postres": 1
   },
   "grupos": {
